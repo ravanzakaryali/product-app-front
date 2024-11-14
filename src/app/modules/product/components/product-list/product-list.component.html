@@ -1,0 +1,52 @@
+  <section>
+    <div class="divider">
+      <span>Products</span>
+      <a [routerLink]="['','new']">Create</a>
+    </div>
+
+    <div>
+      @if (products$ | async; as products ) {
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (product of products; track $index) {
+              <tr>
+                <td>{{ product.title }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td class="text-center">
+                  <div>
+                    <a [routerLink]="['', 'edit', product.id]">Edit</a>
+                    <button (click)="deleteProduct(product.id)">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      } @else {
+        {{noProducts}}
+      }
+      
+      <ng-template #noProductsTemplate>
+        <p>{{ noProducts }}</p>
+      </ng-template>
+    </div>
+    
+  </section>
+  
+
+  
+
+  
+  <ng-template #noProducts>
+    <p>No products available.</p>
+  </ng-template>
+  

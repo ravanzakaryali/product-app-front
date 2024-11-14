@@ -1,0 +1,47 @@
+.divider{
+    display: flex;
+    span{
+        font-size: 28px;
+    }
+    justify-content: space-between;
+    a{
+        border: 1px solid blue;
+        border-radius: 8px;
+        align-content: center;
+        padding: 6px 12px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: blue;
+}
+
+section{
+   
+    table{
+        width: 100%;
+        margin: auto;
+        margin-top: 32px;
+        thead{
+            tr{
+                height: 32px;
+
+                th{
+                    text-align: start;
+                }
+            }
+            
+        }
+        td{
+            padding: 12px 0;
+        }
+
+        button{
+            border: none;
+            outline: none;
+             color: #d12626;
+             background: none;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+
+
+
+.product-manage-container{
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        
+        align-items: center;
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 50%;
+            label{
+                font-size: 18px;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+            }
+            input{
+                width: 100%;
+                font-size: 14px;
+                border-radius: 6px;
+                line-height: 1.5;
+                padding: 5px 10px;
+                transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+                border: 2px solid #dee1e2;
+                color: rgb(14, 14, 16);
+                background: #dee1e2;
+                display: block;
+                height: 36px;
+                :hover {
+                    border-color: #ccc;
+                }
+                :focus{
+                    border-color: #9147ff;
+                    background: #fff;
+                }
+                
+            }
+        }
+
+        .actions{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    button{
+        display: inline-block;
+        outline: 0;
+        text-align: center;
+        cursor: pointer;
+        height: 34px;
+        padding: 0 13px;
+        color: #fff;
+        border-radius: 3px;
+        border: 1px solid transparent;
+        transition: all .3s ease;
+    }
+    .btn-secondary{
+        background: #cc4d29;
+        border-color: #cc4d29;
+       }
+       .btn-primary{
+        background: #6200ee;
+        border-color: #6200ee;
+       }
+}
+
+
+
