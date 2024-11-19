@@ -1,158 +1,102 @@
+# Product App
 
-# Product App Frontend
+**Product App** is a front-end application built with Angular, designed to perform basic CRUD operations for products. The project utilizes NgRx (Redux) for state management and follows a modular Angular architecture.
 
-This is the frontend project for the Product App, built with **Angular 18** and integrated with **NgRx** for state management. It supports server-side rendering (SSR) using **Express.js** and is configured for development and production builds.
+## Features
 
----
+- Display a list of products  
+- Create new products  
+- Edit existing products  
+- Delete products  
 
-## Prerequisites
+## Technologies Used
 
-Ensure you have the following installed:
-- **Node.js**: v18.x or later
-- **Angular CLI**: v18.2.7 or later
-- **npm**: v8.x or later
-
----
+- **Angular 18.2**: Front-end framework  
+- **NgRx (Redux)**: State management  
+- **Express**: Server-Side Rendering (SSR)  
+- **TypeScript**: For strongly-typed development  
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ravanzakaryali/product-app-front
-   cd product-app-front
-   ```
+1. Clone the repository:  
+  $ git clone <repository-url>
+  $ cd product-app-front
+   
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+2. Install dependencies:  
+   $ npm install
+ 
 
----
+3. Start the development server:  
+  $ npm start
 
-## Scripts
-
-Here are the available scripts you can run using `npm run`:
-
-### Development
-
-- **Start the development server**:
-  ```bash
-  npm run start
-  ```
-  Opens the application in development mode at `http://localhost:4200`.
-
-- **Watch for changes**:
-  ```bash
-  npm run watch
-  ```
-  Builds the application in development mode and rebuilds on file changes.
-
-### Testing
-
-- **Run unit tests**:
-  ```bash
-  npm run test
-  ```
-
-### Production
-
-- **Build the production version**:
-  ```bash
-  npm run build
-  ```
-  Compiles the app for production in the `dist/` directory.
-
-- **Start the SSR server**:
-  ```bash
-  npm run serve:ssr:product-app-front
-  ```
-  Starts the server for SSR. The app will be available at `http://localhost:4000` (default port).
-
----
+   The app will run at `http://localhost:4200`.
 
 ## Project Structure
 
-### Key Dependencies
-- **Angular**: Core framework for building the frontend.
-- **NgRx**: State management library for reactive state.
-  - `@ngrx/store`, `@ngrx/effects`, and `@ngrx/store-devtools` are included.
-- **Express.js**: Server-side rendering setup.
-- **RxJS**: Reactive programming utilities.
-- **Zone.js**: Angular's change detection mechanism.
+The folder structure is modular, ensuring scalability and maintainability:
 
-### Development Tools
-- **@angular/cli**: Angular command-line tools.
-- **Karma**: Test runner.
-- **Jasmine**: Testing framework.
-- **TypeScript**: Language used for development.
+```
+src/app
+├── core
+│   ├── directives
+│   │   └── unsubscribable-base.directive.ts
+│   ├── interfaces
+│   │   └── product.interface.ts
+│   ├── services
+│   │   ├── api.service.ts
+│   │   └── product.service.ts
+│   └── core.module.ts
+├── modules
+│   └── product
+│       ├── components
+│       │   ├── product-list
+│       │   └── product-manage
+│       ├── product-routing.module.ts
+│       └── product.module.ts
+├── store
+└── app.component.ts
+```
 
----
+### Key Files and Directories
 
-## Build and Deployment
+- **Core Module**  
+  - Shared utilities and services like `ApiService` and `UnsubscribableBaseDirective`.  
 
-1. **Build for Production**:
-   ```bash
-   npm run build
-   ```
+- **Modules**  
+  - **Product Module**: Contains components and routing for product management.
 
-2. **Deploy the Application**:
-   Copy the `dist/` folder to your server or hosting environment.
+- **Store**  
+  - State management setup using NgRx, including actions, reducers, effects, and selectors.
 
-3. **Start SSR Server**:
-   Ensure `node` is installed on the server and run:
-   ```bash
-   npm run serve:ssr:product-app-front
-   ```
+## CRUD Operations
 
----
+1. **Product List**  
+   - Displays a list of all products.  
+   - Provides navigation links to add or edit products.  
 
-## Development Tips
+2. **Product Manage**  
+   - For the `new` route: A form to create a product.  
+   - For the `edit/:id` route: Prefills the form for editing an existing product.  
 
-1. Use **NgRx DevTools** for debugging state in development mode. Install the [Redux DevTools Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+## State Management with NgRx
 
-2. Run the application in development mode for faster feedback:
-   ```bash
-   npm run start
-   ```
+- **Actions**: Define operations for loading, creating, updating, and deleting products.  
+- **Reducers**: Update state based on dispatched actions.  
+- **Effects**: Manage asynchronous API calls.  
+- **Selectors**: Simplify state retrieval for components.  
 
----
+## Scripts
+
+- `npm start`: Starts the development server.  
+- `npm run build`: Builds the project for production.  
+- `npm run serve:ssr:product-app-front`: Serves the app with SSR enabled.  
+
+## Requirements
+
+- **Node.js**: Version 18 or later.  
+- **npm**: Version 8 or later.  
 
 ## License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
-
-
----
-
-## Libraries Used
-
-### Dependencies
-- **@angular/animations**: Provides animation capabilities for Angular components.
-- **@angular/common**: Includes common directives and services like `NgIf` and `NgFor`.
-- **@angular/compiler**: Handles Angular template compilation.
-- **@angular/core**: Core library for Angular applications.
-- **@angular/forms**: Supports template-driven and reactive forms.
-- **@angular/platform-browser**: Contains browser-specific services and directives.
-- **@angular/platform-browser-dynamic**: Bootstraps the Angular application in a browser.
-- **@angular/router**: Implements routing and navigation between views.
-- **@ngrx/effects**: Manages side effects in NgRx state management.
-- **@ngrx/store**: State management library for Angular.
-- **@ngrx/store-devtools**: DevTools for debugging NgRx state.
-- **express**: Server framework for handling SSR.
-- **rxjs**: Reactive programming utilities.
-- **zone.js**: Angular's zone-based change detection mechanism.
-
-### DevDependencies
-- **@angular-devkit/build-angular**: CLI tools for building Angular applications.
-- **@angular/cli**: Command-line interface for Angular projects.
-- **@angular/compiler-cli**: CLI for Angular's AOT compiler.
-- **@types/express**: Type definitions for Express.js.
-- **@types/jasmine**: Type definitions for Jasmine testing framework.
-- **@types/node**: Type definitions for Node.js.
-- **jasmine-core**: Jasmine testing framework.
-- **karma**: Test runner for Angular projects.
-- **karma-chrome-launcher**: Chrome launcher for Karma.
-- **karma-coverage**: Code coverage reporter for Karma.
-- **karma-jasmine**: Jasmine adapter for Karma.
-- **karma-jasmine-html-reporter**: HTML reporter for Jasmine tests.
-- **typescript**: Superset of JavaScript for static typing.
+This project is licensed under the MIT License.
