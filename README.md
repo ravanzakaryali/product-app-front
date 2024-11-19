@@ -1,27 +1,122 @@
-# Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+# Product App Frontend
 
-## Development server
+This is the frontend project for the Product App, built with **Angular 18** and integrated with **NgRx** for state management. It supports server-side rendering (SSR) using **Express.js** and is configured for development and production builds.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ensure you have the following installed:
+- **Node.js**: v18.x or later
+- **Angular CLI**: v18.2.7 or later
+- **npm**: v8.x or later
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/product-app-front.git
+   cd product-app-front
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Scripts
 
-## Further help
+Here are the available scripts you can run using `npm run`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Development
+
+- **Start the development server**:
+  ```bash
+  npm run start
+  ```
+  Opens the application in development mode at `http://localhost:4200`.
+
+- **Watch for changes**:
+  ```bash
+  npm run watch
+  ```
+  Builds the application in development mode and rebuilds on file changes.
+
+### Testing
+
+- **Run unit tests**:
+  ```bash
+  npm run test
+  ```
+
+### Production
+
+- **Build the production version**:
+  ```bash
+  npm run build
+  ```
+  Compiles the app for production in the `dist/` directory.
+
+- **Start the SSR server**:
+  ```bash
+  npm run serve:ssr:product-app-front
+  ```
+  Starts the server for SSR. The app will be available at `http://localhost:4000` (default port).
+
+---
+
+## Project Structure
+
+### Key Dependencies
+- **Angular**: Core framework for building the frontend.
+- **NgRx**: State management library for reactive state.
+  - `@ngrx/store`, `@ngrx/effects`, and `@ngrx/store-devtools` are included.
+- **Express.js**: Server-side rendering setup.
+- **RxJS**: Reactive programming utilities.
+- **Zone.js**: Angular's change detection mechanism.
+
+### Development Tools
+- **@angular/cli**: Angular command-line tools.
+- **Karma**: Test runner.
+- **Jasmine**: Testing framework.
+- **TypeScript**: Language used for development.
+
+---
+
+## Build and Deployment
+
+1. **Build for Production**:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy the Application**:
+   Copy the `dist/` folder to your server or hosting environment.
+
+3. **Start SSR Server**:
+   Ensure `node` is installed on the server and run:
+   ```bash
+   npm run serve:ssr:product-app-front
+   ```
+
+---
+
+## Development Tips
+
+1. Use **NgRx DevTools** for debugging state in development mode. Install the [Redux DevTools Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
+
+2. Run the application in development mode for faster feedback:
+   ```bash
+   npm run start
+   ```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
