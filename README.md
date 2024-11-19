@@ -120,3 +120,39 @@ Here are the available scripts you can run using `npm run`:
 ## License
 
 This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
+
+
+---
+
+## Libraries Used
+
+### Dependencies
+- **@angular/animations**: Provides animation capabilities for Angular components.
+- **@angular/common**: Includes common directives and services like `NgIf` and `NgFor`.
+- **@angular/compiler**: Handles Angular template compilation.
+- **@angular/core**: Core library for Angular applications.
+- **@angular/forms**: Supports template-driven and reactive forms.
+- **@angular/platform-browser**: Contains browser-specific services and directives.
+- **@angular/platform-browser-dynamic**: Bootstraps the Angular application in a browser.
+- **@angular/router**: Implements routing and navigation between views.
+- **@ngrx/effects**: Manages side effects in NgRx state management.
+- **@ngrx/store**: State management library for Angular.
+- **@ngrx/store-devtools**: DevTools for debugging NgRx state.
+- **express**: Server framework for handling SSR.
+- **rxjs**: Reactive programming utilities.
+- **zone.js**: Angular's zone-based change detection mechanism.
+
+### DevDependencies
+- **@angular-devkit/build-angular**: CLI tools for building Angular applications.
+- **@angular/cli**: Command-line interface for Angular projects.
+- **@angular/compiler-cli**: CLI for Angular's AOT compiler.
+- **@types/express**: Type definitions for Express.js.
+- **@types/jasmine**: Type definitions for Jasmine testing framework.
+- **@types/node**: Type definitions for Node.js.
+- **jasmine-core**: Jasmine testing framework.
+- **karma**: Test runner for Angular projects.
+- **karma-chrome-launcher**: Chrome launcher for Karma.
+- **karma-coverage**: Code coverage reporter for Karma.
+- **karma-jasmine**: Jasmine adapter for Karma.
+- **karma-jasmine-html-reporter**: HTML reporter for Jasmine tests.
+- **typescript**: Superset of JavaScript for static typing.
